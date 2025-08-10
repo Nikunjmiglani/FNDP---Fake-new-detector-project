@@ -1,0 +1,8 @@
+pandas
+requests
+feedparser
+python-dotenv
+scikit-learn
+joblib
+matplotlib
+seaborn
