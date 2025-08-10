@@ -53,17 +53,17 @@ if st.button("Check News"):
             st.write(f"Real Score: {real_score:.2f}, Fake Score: {fake_score:.2f}")
 
             # Default threshold for fake news
-            threshold = 0.9  # Set a stricter threshold to catch more fake news
+            threshold = 0.3  # Set a stricter threshold to catch more fake news
 
             # Adjust threshold for India-related keywords
             india_keywords = ["india", "delhi", "mumbai", "kolkata", "bengaluru", "chennai"]
             if any(word in cleaned_input.lower() for word in india_keywords):
-                threshold -= 0.7  # Loosen threshold for India-related news
+                threshold -= 0.2  # Loosen threshold for India-related news
 
             # Specific fake-related keywords or patterns
             attack_keywords = ["attack", "war", "invasion", "military strike"]
             if any(word in cleaned_input.lower() for word in attack_keywords):
-                threshold = 0.9  # Tighten the threshold for extreme claims
+                threshold = 0.3  # Tighten the threshold for extreme claims
 
             # Decision making based on stricter threshold
             if fake_score > threshold:
