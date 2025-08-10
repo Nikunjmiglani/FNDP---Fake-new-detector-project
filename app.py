@@ -33,20 +33,21 @@ if st.button("Check News"):
         fake_score = proba[1]  # Probability it's fake
         real_score = proba[0]  # Probability it's real
 
-        # Default threshold
-        threshold = 0.7
+        # Default threshold for fake news
+        threshold = 0.8  # Set a stricter threshold to catch more fake news
 
         # Adjust threshold for India-related keywords
         india_keywords = ["india", "delhi", "mumbai", "kolkata", "bengaluru", "chennai"]
         if any(word in cleaned_input.lower() for word in india_keywords):
-            threshold -= 0.1  # Loosen for India news
+            threshold -= 0.1  # Loosen threshold for India-related news
 
-       
-       
+        # Adjust further for specific "fake news" patterns (optional)
+        fake_keywords = ["scam", "conspiracy", "fake", "hoax", "fraud"]
+        if any(word in cleaned_input.lower() for word in fake_keywords):
+            threshold = 0.9  # Tighten the threshold if "fake" keywords are found
 
-        # Decision
+        # Decision making based on stricter threshold
         if fake_score > threshold:
             st.error("🚨 This news is likely **FAKE**.")
         else:
             st.success("✅ This news seems **REAL**.")
-
