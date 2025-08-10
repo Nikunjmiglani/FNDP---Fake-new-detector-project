@@ -53,7 +53,7 @@ if st.button("Check News"):
             st.write(f"Real Score: {real_score:.2f}, Fake Score: {fake_score:.2f}")
 
             # Default threshold for fake news
-            threshold = 0.3  # Set a stricter threshold to catch more fake news
+            threshold = 0.5  # Set a stricter threshold to catch more fake news
 
             # Adjust threshold for India-related keywords
             india_keywords = ["india", "delhi", "mumbai", "kolkata", "bengaluru", "chennai"]
