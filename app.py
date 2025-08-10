@@ -49,8 +49,7 @@ if st.button("Check News"):
             fake_score = proba[1]  # Probability it's fake
             real_score = proba[0]  # Probability it's real
 
-            # Display the confidence scores for debugging
-            st.write(f"Real Score: {real_score:.2f}, Fake Score: {fake_score:.2f}")
+          
 
             # Default threshold for fake news
             threshold = 0.5  # Set a stricter threshold to catch more fake news
